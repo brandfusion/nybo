@@ -1,0 +1,150 @@
+.product-box	
+	padding-bottom: 1em
+	margin-bottom: 1em
+	border: 1px solid #eee
+	background-color: #fff
+	height: 288px
+	position: relative
+	+transition(all 0.2s ease-in)
+	@media (max-width: 480px)
+		height: 300px
+	a 
+		display: block
+		height: 100%
+		padding-top: 15px
+	p 
+		margin: 0px
+	span
+		display: block
+	.product-item-image
+		height: 180px
+		overflow: hidden
+		padding: 5px		
+		img 
+			margin: 0 auto	
+	.product-item-title
+		font-size: 0.8em
+		font-weight: 400	
+		height: 3em
+		margin: 0.5em 0
+		padding: 0px $spacing
+		color: #000
+		overflow: hidden		
+	.product-item-price
+		font-size: 1em		
+		font-weight: 700
+		color: #000
+		position: absolute
+		left: 10px
+		bottom: 12px
+		sup 
+			font-size: 0.55em
+			font-weight: 400
+		@media (max-width: 480px)
+			bottom: 40px				
+	.product-item-old-price
+		font-size: 0.6em
+		color: gray
+		text-decoration: line-through		
+		position: absolute
+		left: 10px
+		bottom: 3em
+		sup 
+			font-size: 0.55em
+			font-weight: 400
+		@media (max-width: 480px)
+			right: 10px
+			left: auto	
+			bottom: 42px
+	.product-item-button
+		+transition(all 0.4s ease-in)		
+		// width: 36px
+		// height: 36px
+		background-color: $red
+		color: #fff
+		text-align: center
+		line-height: 28px
+		position: absolute
+		bottom: 10px
+		right: 10px
+		// text-transform: uppercase
+		font-size: 0.7em
+		padding: 0px 1em
+		// +transition(all 0.2s ease-in)
+		// +background-image(linear-gradient(to right, $secondary 50%, $red 50%))
+		// background-size: 200% 100%
+		// background-position: right bottom
+		@media (max-width: 480px)
+			left: 8%
+			right: 8%			
+		&:before
+			font-family: "FontAwesome"
+			content: "\f07a"
+			font-size: 1.1em
+			margin-right: 0.5em	
+			// background-color: $red
+			display: inline-block
+			// float: left
+			// padding: 0 1em
+			+transition(all 0.5s ease-in)
+			// border-right: 1px solid #fff
+		&:hover
+			// background-color: $secondary
+			// background-position: left bottom
+			&:before
+				// background-color: $secondary			
+	.sale		
+		+transition(all 0.2s ease-in)	
+		background-color: rgba(0,190,212,0.4)			
+		position: absolute
+		top: 30px
+		text-align: left
+		left: 10px
+		color: #fff
+		font-weight: 700
+		padding-left: 0.7em
+		font-size: 0.7em			
+		width: 3em
+		height: 3em
+		text-align: center
+		padding-top: 0.8em
+		padding-left: 0
+		border-radius: 3em	
+	&:hover
+		border-color: #ccc
+		+box-shadow(0px 0px 3px #ccc)
+		// transform: scale(1.1)
+		z-index: 2
+		.product-item-button
+			background-color: $primary		
+		.sale
+			background-color: rgba(0,190,212,1)	
+			box-shadow: 0px 0px 0px 4px rgba(0,190,212,0.2)	
+	.stock
+		position: absolute
+		top: 0px
+		right: 0px
+		left: 0px			
+		background-color: #fff
+		// background-color: rgba(255,255,255,0.95)
+		color: #000
+		font-size: 0.7em
+		text-align: center
+		border: 1px solid #000
+		font-weight: 400
+		padding: 0.2em 0.5em 0.2em 0
+		border: none
+		border-bottom: 1px solid #eee
+		font-weight: 700
+		width: 100%
+		&.Instoc
+			// border-color: #1B943C
+			color: #1B943C
+		&.Stoclimitat
+			// border-color: rgb(240, 122, 31)
+			color: rgb(240, 122, 31)
+		&.Stocpartener
+			// border-color: red	
+			color: red
+		
+

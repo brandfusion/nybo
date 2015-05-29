@@ -1,0 +1,531 @@
+.product-page	
+	+make-row()
+	.product-item
+		+make-sm-column(12)
+		+clearfix
+		padding: 0
+		// padding-top: $spacing
+	.product-image
+		+make-sm-column(7)	
+		.thumbnails
+			+make-sm-column(2)
+			+make-md-column(12)
+			+make-lg-column(2)		
+			.thumbs  //?!?
+				+clearfix	
+			padding: 0
+			a
+				border: 1px solid #eee
+				display: block
+				background-color: #fff
+			img 
+				max-width: 100%
+				margin: 0 auto	
+			@media (min-width: $screen-md-min)
+				float: left
+				padding-right: 0px
+				ul
+					+h-nav					
+				li 
+					width: 15%
+				a 
+					margin-right: $spacing	
+					float: left
+					width: 15%
+			@media (min-width: $screen-lg-min)
+				padding-right: $spacing
+				ul 
+					+v-nav	
+				li 
+					width: 100%
+				a 
+					margin-bottom: $spacing
+					float: none
+					width: 100%
+		.main-image
+			+make-sm-column(10)
+			+make-md-column(12)
+			+make-lg-column(10)
+			position: relative
+			// padding-right: 0
+			margin-bottom: $spacing
+			background-color: #fff
+			img 
+				margin: 0 auto
+				max-width: 100%
+				// box-shadow: 0px 0px 6px #ddd
+				// border: 1px solid #00bed4	
+			@media (min-width: $screen-md-min)
+				float: right
+			@media (max-width: $screen-lg-min)
+				padding-right: $spacing
+				padding: 0
+			.sale		
+				+transition(all 0.2s ease-in)	
+				background-color: rgba(0,190,212,0.4)			
+				position: absolute
+				top: 10px
+				text-align: left
+				right: 10px
+				color: #fff
+				font-weight: 700
+				padding-left: 0.7em
+				font-size: 0.7em			
+				width: 3em
+				height: 3em
+				text-align: center
+				padding-top: 0.8em
+				padding-left: 0
+				border-radius: 3em	
+				background-color: rgba(0,190,212,1)	
+				box-shadow: 0px 0px 0px 4px rgba(0,190,212,0.2)	
+				z-index: 2
+			.manufacturer
+				position: absolute
+				left: 10px
+				top: 10px	
+				img 
+					max-width: 125px					
+	.product-related-list
+		+make-sm-column(12)
+		+make-md-column(12)
+		+make-lg-column(12)	
+	.product-content
+		+make-sm-column(5)		
+		p
+			margin-bottom: 0
+			font-size: 0.8em
+		.no-product
+			background-color: #ff0049
+			padding: 0.5em
+			color: #fff
+			text-align: center
+			margin-bottom: 10px					
+		.product-title
+			font-weight: 300
+			color: $blue
+			font-size: 1.7em
+		.product-code
+			color: #aaa
+		.product-info-secondary
+			// padding: 0px 0px $spacing/2
+			border-bottom: 1px solid $blue
+			margin: $spacing 0
+			.block 
+				background-color: #fff 
+				border: 1px solid #eee
+				padding: 0.5em
+				margin-bottom: 0.5em
+				p 
+					margin-bottom: 0px
+			.headline
+				font-size: 0.8em
+				margin-bottom: 0	
+				font-weight: 700			
+			p
+				margin-bottom: 0.5em 
+			a
+				font-size: 0.8em
+				color: #000
+				text-decoration: underline
+				margin-bottom: 0.8em
+			table 
+				width: 100%
+				tr td 
+					font-size: 0.8em
+		.product-info-main
+			margin-bottom: $spacing		
+		.product-options
+			// padding: $spacing
+			// border: 1px solid #ddd
+		.price
+			font-size: 2em
+			line-height: 1em
+			font-weight: 600
+			sup
+				font-size: 0.4em
+				top: -1em	
+				font-weight: 400	
+		.old-price
+			text-decoration: line-through
+			color: $blue
+		.manufacturer-page
+			display: block	
+			font-size: 0.8em
+			font-weight: 400
+			a 
+				font-size: 1em				
+	.variant-select
+		select 
+			font-size: 0.8em	
+			border: 1px solid #000
+			outline: none
+			+transition(all 0.2s ease-in)
+			&[data-pick="1"]			
+				background-color: $blue
+				border-color: scale-lightness($blue, -20)
+				font-weight: 600
+				color: #fff
+				option[disabled]	
+					color: scale-lightness($blue, -20)
+				&:after			
+					font-family: "FontAwesome"
+					content: "\f00c"
+					font-weight: 400
+					position: absolute
+					font-size: 0.7em
+					margin-left: 0.3em
+					color: scale-lightness($blue, -20)
+
+	.variant-container	
+		padding: 0.8em 0
+		border-bottom: 1px dotted #ddd
+		position: relative
+		+transition(all 0.3s ease-in)		
+		&:first-child
+			padding-top: 0
+		&:last-child
+			border-bottom: none
+			padding-bottom: 0.3em	
+		p 
+			margin-bottom: 0.3em
+			font-weight: 700
+			font-size: 0.8em
+			text-transform: uppercase
+		.variant-content
+			position: relative
+			+transition(all 0.3s ease-in)
+		.tooltip-variant
+			padding-top: 0.8em			
+			position: absolute
+			top: 0
+			left: 0
+			right: 0
+			bottom: 0
+			z-index: 2
+			text-align: center
+			+transition(all 0.3s ease-in)
+			p 
+				font-weight: 400
+				border: 1px solid #000
+				padding: 0.5em
+				background-color: #fff
+				z-index: 1
+				position: relative
+				box-shadow: 0px 0px 3px #ddd
+				display: inline-block
+				opacity: 0
+				transform: translate(0px,-10px)
+				+transition(all 0.2s ease-in)
+		.tooltip-variant-visible	
+			+transition(all 0.3s ease-in)
+			// background-color: rgba(255,255,255,0.3)			
+			p
+				opacity: 1
+				transform: translate(0px,0px)
+		.tooltip-variant-disabled
+			display: none	
+.extras	
+	background-color: #fff
+	padding: 0.5em
+	margin-bottom: $spacing
+	border-bottom: 1px dotted #ddd
+	li
+		width: 50%		
+	ul
+		+h-nav
+		
+	p
+		margin-top: 0.5em
+		font-weight: 400
+		margin: 0
+		text-transform: none
+		span
+			font-weight: 600	
+	a
+		color: #000	
+		font-size: 0.7em
+		width: 100%
+		display: block	
+		font-weight: 700
+		margin-bottom: 0	 
+		text-transform: uppercase
+		text-decoration: none	
+		line-height: 1.7em	
+	.fa 
+		color: $red
+		margin-right: 0.5em
+		font-size: 1.2em	
+.phone-support
+	display: block
+	text-align: center
+	a 
+		color: #000	
+		&:hover 
+			color: $red		
+.variant-box
+	ul
+		+h-nav
+	a
+		border: 1px solid #000
+		min-width: 4em
+		text-align: center
+		margin-right: 0.5em
+		color: #000
+		font-size: 0.8em
+		padding: 0 1em
+		&:hover
+			background-color: $blue
+			border-color: scale-lightness($blue, -20)
+			color: #fff
+			position: relative
+			// font-weight: 600
+		&[data-pick="1"]
+			background-color: $blue
+			border-color: scale-lightness($blue, -20)
+			color: #fff
+			position: relative
+			// font-weight: 600
+			&:after			
+				font-family: "FontAwesome"
+				content: "\f00c"
+				font-weight: 400
+				position: absolute
+				font-size: 0.7em
+				margin-left: 0.3em
+				color: scale-lightness($blue, -20)
+				top: 0
+				right: 0.3em
+.add-to-basket
+	background-color: $red
+	padding: 0 0.8em
+	line-height: 2em
+	outline: none
+	border: none
+	// border: 1px solid #b5c54a
+	color: #fff
+	+transition(all 0.2s ease-in)
+	&:before		
+		+transition(all 0.2s ease-in)
+		content: "+"
+		font-weight: 300
+		margin-right: 0.5em
+		font-size: 1.4em
+		float: left
+		display: block
+	&:hover		
+		color: #fff
+		background-color: $blue
+		&:before
+			transform: scale(1.8)
+			// color: $red
+.submit-order
+	p
+		display: inline-block
+		margin-right: 0.3em
+	input		
+		max-width: 3.8em
+		font-size: 0.8em
+		border: 1px solid #000
+		padding: 0.2em 0.5em
+	a 
+		margin-right: 0.3em	
+.product-related-list
+	padding-top: $spacing
+	p 
+		font-style: italic
+		text-align: center
+		font-weight: 300
+		font-size: 0.8em
+	.related-item
+		a 
+			color: #000
+			span
+				display: block
+				font-size: 0.8em
+				font-weight: 400
+				text-align: center
+				line-height: 2em
+				margin-bottom: 2em
+.product-recommended
+	+make-sm-column(12)
+	.product-list
+		+make-row
+		.item 
+			+make-sm-column(2)	
+.effect-hover	
+	-webkit-filter: blur(2px)
+	-moz-filter: blur(2px)
+	-o-filter: blur(2px)
+	-ms-filter: blur(2px)
+	filter: blur(2px)
+	opacity: 0.5
+
+// Product Tabs
+.product-tab-header
+	+make-sm-column(12)
+	margin-top: $spacing*2
+	ul
+		+h-nav
+		border-bottom: 1px solid $blue
+		a
+			color: #000
+			font-size: 0.8em
+			line-height: 2em
+			display: inline-block
+			font-weight: 700
+			text-transform: uppercase
+			&:after
+				content: "/"
+				margin-left: 5px
+				margin-right: 5px
+				font-weight: 400
+				color: $red
+			&:hover
+				color: $blue
+		li.active
+			a				
+				color: $blue	
+.tab-content
+	padding-top: $spacing	
+	+make-sm-column(12)
+	+clearfix		
+	.product-description
+		padding-top: 4em
+		max-width: 75%
+		margin: 0 auto
+		font-size: 0.8em
+		h3
+			font-size: 1.8em
+			font-weight: 300
+		.inline-element
+			margin: 2em
+			margin-top: 1em
+			&:nth-of-type(2n+1)
+				margin-left: -4em
+				float: left
+			&:nth-of-type(2n+2)
+				margin-right: -4em
+				float: right
+.tab-content
+	.tab-pane 
+		display: none
+		visibility: hidden
+	.active 
+		display: block
+		visibility: visible
+.comment-block	
+	+clearfix
+	margin-bottom: 0.2em
+	a
+		display: inline-block
+		color: #aaa
+		// text-decoration: underline
+		font-size: 0.8em
+		// padding: 0 0.5em
+		font-style: italic
+		&:hover 
+			text-decoration: underline
+	.write-review
+		&:after
+			font-family: "FontAwesome"
+			content: "\f0e5"
+			margin-left: 0.2em	
+			color: $blue
+			margin-right: 0.2em
+		&:hover
+			color: $blue
+	.rating-block
+		+clearfix
+		display: inline-block
+		vertical-align: middle
+		img
+			float: left
+	.wishlist
+		a 			
+			&:after
+				margin-left: 0.2em
+				font-family: "FontAwesome"
+				content: "\f005"			
+				color: orange
+			&:hover
+				color: orange
+.product-list-simillar
+	+make-xs-column(12)
+	.item
+		+make-xs-column(6)
+		+make-sm-column(4)		
+		+make-md-column(3)
+		+make-lg-column(2)
+.product-list-bought
+	+make-xs-column(12)
+	.item
+		+make-xs-column(6)
+		+make-sm-column(4)		
+		+make-md-column(3)
+		+make-lg-column(2)	
+.product-list-headline
+	color: #000
+	font-size: 0.8em
+	line-height: 2em
+	display: inline-block
+	font-weight: 700
+	text-transform: uppercase	
+	border-bottom: 1px solid $blue	
+	margin-bottom: $spacing
+	width: 100%
+	display: block
+.product-description-wrap
+	+make-xs-column(12)	
+	font-size: 0.8em
+	padding: 5% $spacing	
+	background-color: #fff
+	margin-top: 10px
+	table 
+		width: 100%
+	a 
+		text-decoration: underline
+		color: #000
+	.product-description 
+		max-width: 700px
+		margin: 0 auto
+	h4 
+		font-size: 1.2em
+		font-weight: 700
+		border-bottom: 1px solid $blue
+		margin-bottom: 10px
+		padding-bottom: 0.5em		
+	.reviews
+		max-width: 700px
+		margin: 0 auto		
+		.review-stars 
+			+clearfix
+			margin-right: 0.5em
+			img 
+				float: left
+				margin-right: 0	
+		// blockquote
+		// quotes: "\201C""\201D""\2018""\2019"\
+		.review-rating
+			display: inline-block
+		.review-author 
+			margin-bottom: $spacing
+			display: inline-block
+			vertical-align: top
+		.review-content				 
+			p 
+				display: inline
+			&:before
+				color: #ccc
+				content: "\201C"
+				font-size: 3em
+				line-height: 0.1em
+				margin-right: 0.25em
+				vertical-align: -0.4em
+			&:after
+				color: #ccc
+				content: "\201D"
+				font-size: 3em
+				line-height: 0.1em
+				margin-left: 0.1em
+				vertical-align: -0.6em	
